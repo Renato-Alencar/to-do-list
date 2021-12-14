@@ -1,0 +1,156 @@
+body {
+  --green: rgb(20, 107, 103);
+  --black: rgba(0, 0, 0, 0.753);
+  --boxShadow: 0.75vw 0.75vw var(--black);
+  --fontSize: clamp(1rem, 3vw, 1.75rem);
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  background-image: linear-gradient(90deg, cyan, gold);
+
+  box-sizing: content-box;
+}
+
+.todo-title {
+  text-align: center;
+
+  color: var(--green);
+}
+
+.todo-input {
+  width: 100vw;
+
+  display: inline-flex;
+  justify-content: center;
+
+  outline: none;
+
+  margin-bottom: 15px;
+}
+
+.todo-input button {
+  padding: 1vh 2vw;
+
+  font-size: var(--fontSize);
+  font-weight: 600;
+
+  border-radius: 4px;
+  border: 1px solid var(--black);
+
+  margin-left: 5px;
+
+  color: var(--black);
+
+  background-color: lightseagreen;
+  box-shadow: var(--boxShadow);
+}
+
+.todo-input button:hover {
+  cursor: pointer;
+
+  color: aliceblue;
+  background-color: var(--green);
+}
+
+#todo-input__input {
+  box-shadow: var(--boxShadow);
+}
+
+#todo-input__input:focus,
+#todo-input__btn:focus {
+  outline-color: goldenrod;
+  outline-offset: 1.5px;
+}
+
+#todo-input__input,
+#todo-input__input::placeholder {
+  color: var(--green);
+
+  font-weight: 600;
+  font-size: var(--fontSize);
+}
+
+#todo-tasks {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.new-task {
+  width: 40vw;
+  height: 5vh;
+
+  display: inline-flex;
+  align-items: center;
+
+  border: 1px solid var(--black);
+  border-radius: 4px;
+
+  margin-bottom: 2vh;
+
+  padding: 1vw;
+
+  box-shadow: var(--boxShadow);
+
+  background-color: lightseagreen;
+}
+
+.new-task:hover {
+  cursor: pointer;
+}
+
+.new-task input {
+  display: none;
+}
+
+.text-task {
+  font-size: var(--fontSize);
+  font-weight: 600;
+
+  flex-grow: 1;
+}
+
+#remove-task {
+  border-radius: 4px;
+  border: 1px solid var(--black);
+
+  font-size: var(--fontSize);
+  font-weight: 600;
+
+  color: ghostwhite;
+  background-color: var(--black);
+}
+
+#remove-task:hover {
+  cursor: pointer;
+
+  font-weight: 600;
+
+  color: var(--black);
+  background-color: gray;
+}
+
+:checked + .text-task {
+  text-decoration: line-through;
+
+  color: ghostwhite;
+}
+
+@media only screen and (max-width: 1024px) {
+  #todo-input__input {
+    width: 50vw;
+  }
+
+  .new-task {
+    width: 60vw;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .new-task {
+    width: 90vw;
+  }
+}
