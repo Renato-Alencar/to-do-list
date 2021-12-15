@@ -30,10 +30,16 @@ function createTask(value) {
   TODO_TASKS.appendChild(TASK);
 }
 
+function capitalizeTaskInput(task) {
+  return task.charAt(0).toUpperCase() + task.slice(1).toLowerCase();
+}
+
 ADD_TASK.addEventListener("click", (event) => {
   event.preventDefault();
 
-  createTask(INPUT_TASK.value);
+  let taskInput = capitalizeTaskInput(INPUT_TASK.value.trim());
+
+  if (taskInput.length > 0) createTask(taskInput);
 
   INPUT_TASK.value = "";
 });
