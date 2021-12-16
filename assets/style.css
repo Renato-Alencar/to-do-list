@@ -101,7 +101,7 @@ body {
   justify-content: space-evenly;
   align-items: center;
 
-  margin-top: clamp(9rem, 19vh, 11rem);
+  margin-top: clamp(9.5rem, 19vh, 11rem);
 }
 
 .new-task {
